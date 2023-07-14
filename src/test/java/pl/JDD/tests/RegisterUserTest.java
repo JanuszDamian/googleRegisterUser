@@ -1,11 +1,15 @@
 package pl.JDD.tests;
 
 import org.testng.annotations.Test;
+import pl.JDD.pages.HomePage;
 
-public class RegisterUserTest extends BaseTest{
+public class RegisterUserTest extends BaseTest {
 
     @Test
     public void registerUserTest() {
-        System.out.println("Mock");
+        new HomePage(driver)
+                .openGmailPage()
+                .openNamePage()
+                .openBasicInfoPage("Aa","Bb");
     }
 }
