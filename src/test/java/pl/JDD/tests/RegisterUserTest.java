@@ -7,9 +7,12 @@ public class RegisterUserTest extends BaseTest {
 
     @Test
     public void registerUserTest() {
+        int randomNumber = (int) (Math.random() * 1000);
         new HomePage(driver)
                 .openGmailPage()
                 .openNamePage()
-                .openBasicInfoPage("Aa","Bb");
+                .openBasicInfoPage("aa","bb")
+                .openLoginMethod("14","1988")
+                .openCreatePasswordPage("dsfgsh"+randomNumber);
     }
 }

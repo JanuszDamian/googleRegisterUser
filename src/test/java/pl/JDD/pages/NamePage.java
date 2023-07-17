@@ -16,8 +16,6 @@ public class NamePage {
     @FindBy(xpath = "//span[text()='Dalej']")
     private WebElement dalejButton;
 
-
-
     private WebDriver driver;
     public NamePage(WebDriver driver) {
         PageFactory.initElements(driver,this);
