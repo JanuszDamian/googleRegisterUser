@@ -36,17 +36,16 @@ public class LoginMethod {
         dalejButton.click();
     }
 
-    public CreatePasswordPage openCreatePasswordPage() throws {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(radioOwnAddressEmail));
+    public CreatePasswordPage openCreatePasswordPage() {
 
-        if (radioOwnAddressEmail.isDisplayed()) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(radioOwnAddressEmail));
             radioOwnAddressEmail.click();
             writeLogin();
-        } else {
+        } catch (Exception e) {
             writeLogin();
         }
-
         return new CreatePasswordPage(driver);
     }
 
