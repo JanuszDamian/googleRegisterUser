@@ -20,8 +20,9 @@ public class HomePage {
     private WebElement doUzytkuOsobistegoLink;
 
     private WebDriver driver;
-    public HomePage (WebDriver driver) {
-        PageFactory.initElements(driver,this);
+
+    public HomePage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 

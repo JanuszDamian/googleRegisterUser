@@ -16,7 +16,7 @@ public class GmailPage {
     private WebDriver driver;
 
     public GmailPage(WebDriver driver) {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 

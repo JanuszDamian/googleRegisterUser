@@ -24,8 +24,9 @@ public class BasicInfoPage {
     private WebElement dalejButton;
 
     private WebDriver driver;
+
     public BasicInfoPage(WebDriver driver) {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 

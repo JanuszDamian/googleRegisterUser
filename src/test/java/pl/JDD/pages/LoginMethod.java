@@ -1,6 +1,5 @@
 package pl.JDD.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +24,7 @@ public class LoginMethod {
     private WebElement dashboardText;
 
     public WebDriver driver;
+
     public LoginMethod(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -32,7 +32,7 @@ public class LoginMethod {
 
     public void writeLogin() {
         int randomNumber = (int) (Math.random() * 1000);
-        userNameInput.sendKeys("rewhqwet"+randomNumber);
+        userNameInput.sendKeys("rewhqwet" + randomNumber);
         dalejButton.click();
     }
 
@@ -43,8 +43,7 @@ public class LoginMethod {
         if (radioOwnAddressEmail.isDisplayed()) {
             radioOwnAddressEmail.click();
             writeLogin();
-        }
-        else {
+        } else {
             writeLogin();
         }
 

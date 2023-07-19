@@ -17,8 +17,9 @@ public class NamePage {
     private WebElement dalejButton;
 
     private WebDriver driver;
+
     public NamePage(WebDriver driver) {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 

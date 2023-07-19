@@ -11,8 +11,8 @@ public class RegisterUserTest extends BaseTest {
         new HomePage(driver)
                 .openGmailPage()
                 .openNamePage()
-                .openBasicInfoPage("aa","bb")
-                .openLoginMethod("14","1988")
+                .openBasicInfoPage("aa", "bb")
+                .openLoginMethod("14", "1988")
                 .openCreatePasswordPage();
     }
 }
