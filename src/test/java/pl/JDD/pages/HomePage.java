@@ -1,5 +1,7 @@
 package pl.JDD.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +21,8 @@ public class HomePage {
     @FindBy(xpath = "//span[text()='Do użytku osobistego']")
     private WebElement doUzytkuOsobistegoLink;
 
+    private static final Logger logger = LogManager.getLogger();
+
     private WebDriver driver;
 
     public HomePage(WebDriver driver) {
@@ -27,8 +31,10 @@ public class HomePage {
     }
 
     public GmailPage openGmailPage() {
+        logger.info("Opening Gmail page");
         odrzucWszystkoButton.click();
         gmailLink.click();
+        logger.info("Opening Gmail page done");
         return new GmailPage(driver);
     }
 

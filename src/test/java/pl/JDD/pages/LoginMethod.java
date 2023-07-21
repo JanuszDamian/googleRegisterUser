@@ -1,5 +1,7 @@
 package pl.JDD.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +25,8 @@ public class LoginMethod {
     @FindBy(xpath = "//span[text()='Wybierz adres Gmail lub utwórz własny']")
     private WebElement dashboardText;
 
+    private static final Logger logger = LogManager.getLogger();
+
     public WebDriver driver;
 
     public LoginMethod(WebDriver driver) {
@@ -32,8 +36,12 @@ public class LoginMethod {
 
     public void writeLogin() {
         int randomNumber = (int) (Math.random() * 1000);
+        logger.info("Entering the username");
         userNameInput.sendKeys("rewhqwet" + randomNumber);
+        logger.info("Entering the username done");
+        logger.info("Clicking next button");
         dalejButton.click();
+        logger.info("Clicking next button done");
     }
 
     public CreatePasswordPage openCreatePasswordPage() {
@@ -41,7 +49,9 @@ public class LoginMethod {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOf(radioOwnAddressEmail));
+            logger.info("Clicking radio button");
             radioOwnAddressEmail.click();
+            logger.info("Clicking radio button done");
             writeLogin();
         } catch (Exception e) {
             writeLogin();

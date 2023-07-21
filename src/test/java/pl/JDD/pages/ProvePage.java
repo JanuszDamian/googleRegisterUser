@@ -1,5 +1,7 @@
 package pl.JDD.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +24,8 @@ public class ProvePage {
     @FindBy(xpath = "//span[text()='Dalej']")
     private WebElement dalejButton;
 
+    private static final Logger logger = LogManager.getLogger();
+
     private WebDriver driver;
 
     public ProvePage(WebDriver driver) {
@@ -32,6 +36,8 @@ public class ProvePage {
     public void confirmPage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(pageTitletext));
+        logger.info("Confirm the page title");
         Assert.assertEquals(pageTitletext.getText(),"Udowodnij, że jesteś człowiekiem");
+        logger.info("Confirm the page title: " + pageTitletext.getText());
     }
 }
